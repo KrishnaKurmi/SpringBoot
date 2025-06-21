@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Products</title>
+</head>
+<body>
+<form method="post" action="/saveproduct">
+  <label for="productname">Product Name</label>
+  <input type="text" id="productname" name="productname"><br>
+
+  <label for="category">Product Category</label>
+  <select id="category" name="category">
+    <option>Electronics</option>
+    <option>Stationary</option>
+    <option>Household</option>
+    <option>Medicines</option>
+  </select><br>
+
+  <label for="isavailable">Is Available</label>
+  <input type="checkbox" id="isavailable" name="isavailable"><br>
+
+  <input type="submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>First Page</h1>
+  <h2 th:text="'Value of x is '+${x}"></h2>
+  <h2 th:text="'Value of y is '+${y}"></h2>
+  <h2 th:text="'Value of z is '+${z}"></h2>
+    <h2 th:text="'Sum of x and y is '+${x+y}"></h2>
+
+
+    <div th:if="${age>=18}">
+        <h1>You can vote</h1>
+    </div>
+    <div th:unless="${age>=18}">
+            <p>You cannot vote</p>
+    </div>
+</body>
+</html>

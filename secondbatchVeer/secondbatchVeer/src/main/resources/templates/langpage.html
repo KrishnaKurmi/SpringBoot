@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Languages </title>
+</head>
+<body>
+<h1 th:text="${lang}"></h1>
+<div th:each="var : ${lang}" >
+  <h1 th:text="${var}"></h1>
+</div>
+
+<ul>
+  <li th:each="v,k: ${lang}">
+    <strong th:text="${v}" th:style="${k.odd}? 'color:teal;font-size:50px;' : 'color:red'" ></strong>
+
+<!--    <h1 th:text="${k.index+1}"></h1>-->
+  </li>
+</ul>
+</body>
+</html>
