@@ -12,7 +12,7 @@ import java.time.LocalDate;
 public class DoctorsController {
     @GetMapping("/doctor")
     public String addDoctor(){
-        return "doctors";
+        return "dochtml/doctors";
     }
 
     @Autowired
@@ -45,6 +45,6 @@ public class DoctorsController {
         System.out.println(gender);
         Doctors d = new Doctors(convert(name),specialisation,doj,gender,residentdoctor);
         doctorsRepository.save(d);
-        return "save";
+        return "dochtml/save";
     }
 }
