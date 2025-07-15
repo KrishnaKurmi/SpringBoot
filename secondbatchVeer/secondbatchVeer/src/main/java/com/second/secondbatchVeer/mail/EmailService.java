@@ -10,12 +10,24 @@ public class EmailService {
     @Autowired
     private JavaMailSender mailSender;
 
-    // Simple Message
+    // Simple Mail
     public void sendMessage(String to, String subject, String body){
         SimpleMailMessage message =new SimpleMailMessage();
         message.setTo(to);
         message.setSubject(subject);
         message.setText(body);
         mailSender.send(message);
+    }
+
+    //HTML Email
+    public void htmlMail(String to, String subject, String body) throws MessagingException {
+        MimeMessage m=mailSender.createMimeMessage();
+        MimeMessageHelper helper=new MimeMessageHelper(m,true);
+        helper.setFrom("Sam");
+        helper.setTo(to);
+        helper.setSubject(subject);
+        helper.setText(body,true);
+
+        mailSender.send(m);
     }
 }
