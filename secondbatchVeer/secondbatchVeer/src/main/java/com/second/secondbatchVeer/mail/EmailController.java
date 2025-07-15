@@ -10,6 +10,7 @@ public class EmailController {
     @Autowired
     EmailService emailService;
 
+    //Mapping to simple mail function
     @GetMapping("/send")
     @ResponseBody
     public String send(){
