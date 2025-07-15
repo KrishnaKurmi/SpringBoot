@@ -22,4 +22,17 @@ public class EmailController {
         );
         return "Mail Sent";
     }
+
+    // Mapping to HTML mail function
+    @GetMapping("/send2")
+    @ResponseBody
+    public String htmlMail(){
+        System.out.println("Mail Sent");
+        emailService.htmlMail(
+                "your-mail@gmail.com",
+                "Test Mail",
+                "<h1>This is a test Mail, Have a Nice Day!</h1>" // HTML style
+        );
+        return "Mail Sent";
+    }
 }
