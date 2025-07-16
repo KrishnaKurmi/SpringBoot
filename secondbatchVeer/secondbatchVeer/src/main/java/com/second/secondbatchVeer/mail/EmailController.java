@@ -27,7 +27,7 @@ public class EmailController {
     // Mapping to HTML mail function
     @GetMapping("/send2")
     @ResponseBody
-    public String htmlMail(){
+    public String htmlMail() throws MessagingException {
         System.out.println("Mail Sent");
         emailService.htmlMail(
                 "your-mail@gmail.com",
