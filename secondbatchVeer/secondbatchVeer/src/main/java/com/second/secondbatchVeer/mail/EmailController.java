@@ -1,5 +1,5 @@
 package com.vkr.SampleProject.mail;
-
+//Frameworks
 import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
