@@ -1,5 +1,5 @@
 package com.vkr.SampleProject.mail;
-
+//Frameworks
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
