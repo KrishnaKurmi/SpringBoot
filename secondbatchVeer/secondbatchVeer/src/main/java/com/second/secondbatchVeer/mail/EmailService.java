@@ -33,4 +33,18 @@ public class EmailService {
 
         mailSender.send(m);
     }
+    //HTML Email with Attachments
+    public void htmlMailWithAttachment(String to, String subject, String body, String path) throws MessagingException {
+        MimeMessage m=mailSender.createMimeMessage();
+        MimeMessageHelper helper=new MimeMessageHelper(m,true);
+        helper.setFrom("Sam");
+        helper.setTo(to);
+        helper.setSubject(subject);
+        helper.setText(body,true);
+
+        FileSystemResource file = new FileSystemResource(new File(path));
+        helper.addAttachment(file.getFileName(), file);
+
+        mailSender.send(m);
+    }
 }
