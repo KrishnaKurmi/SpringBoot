@@ -36,4 +36,18 @@ public class EmailController {
         );
         return "Mail Sent";
     }
+
+    // Mapping to HTML mail with Attachments function
+    @GetMapping("/send3")
+    @ResponseBody
+    public String htmlMailWithAttachment() throws MessagingException {
+        System.out.println("Mail Sent");
+        emailService.htmlMailWithAttachment(
+                "your-mail@gmail.com",
+                "Test Mail",
+                "<h1>This is a test Mail, Have a Nice Day!</h1>", // HTML style
+                "file-path" // file path with extension
+        );
+        return "Mail Sent";
+    }
 }
