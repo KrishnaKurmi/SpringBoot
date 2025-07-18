@@ -51,4 +51,18 @@ public class EmailController {
         );
         return "Mail Sent";
     }
+
+    // Mapping to HTML mail with Inline Image function
+    @GetMapping("/send4")
+    @ResponseBody
+    public String htmlMailWithInlineImage() throws MessagingException {
+        System.out.println("Mail Sent");
+        emailService.htmlMailWithAttachment(
+                "your-mail@gmail.com",
+                "Test Mail",
+                "<h1>This is a test Mail, Have a Nice Day!</h1>", // HTML style
+                "image-path" // image path with extension
+        );
+        return "Mail Sent";
+    }
 }
