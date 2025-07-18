@@ -47,4 +47,18 @@ public class EmailService {
 
         mailSender.send(m);
     }
+    //HTML Email with Inline Image
+    public void htmlMailWithAttachment(String to, String subject, String body, String path) throws MessagingException {
+        MimeMessage m=mailSender.createMimeMessage();
+        MimeMessageHelper helper=new MimeMessageHelper(m,true);
+        helper.setFrom("Sam");
+        helper.setTo(to);
+        helper.setSubject(subject);
+        helper.setText(body,true);
+
+        ClassPathResource image = new ClassPathResource(path);
+        helper.addInline("Image", image);
+
+        mailSender.send(m);
+    }
 }
